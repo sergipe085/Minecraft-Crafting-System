@@ -13,14 +13,11 @@ MonoBehaviour:
   m_Name: Recipe_WoodStick
   m_EditorClassIdentifier: 
   outputItem: {fileID: 11400000, guid: fb0c7bf3d9ebe094983fccd6c3bcf51b, type: 2}
-  recipeHash: 300300000
+  hash:
+    hashString: 3003
+    notNullCounter: 2
   itemSlots:
   - {fileID: 11400000, guid: 342d1b30e0388e54281a6ff5a5932bb4, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 11400000, guid: 342d1b30e0388e54281a6ff5a5932bb4, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}

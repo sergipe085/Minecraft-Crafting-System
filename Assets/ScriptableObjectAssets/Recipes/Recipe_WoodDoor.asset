@@ -12,6 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9026e1776d43448b452e92b624e18e, type: 3}
   m_Name: Recipe_WoodDoor
   m_EditorClassIdentifier: 
-  outputItem: {fileID: 0}
-  recipeHash: 
-  itemSlots: []
+  outputItem: {fileID: 11400000, guid: 83d91f23460aeba4daf64c77e00aece6, type: 2}
+  hash:
+    hashString: 33033033
+    notNullCounter: 6
+  itemSlots:
+  - {fileID: 11400000, guid: 342d1b30e0388e54281a6ff5a5932bb4, type: 2}
+  - {fileID: 11400000, guid: 342d1b30e0388e54281a6ff5a5932bb4, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 342d1b30e0388e54281a6ff5a5932bb4, type: 2}
+  - {fileID: 11400000, guid: 342d1b30e0388e54281a6ff5a5932bb4, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 342d1b30e0388e54281a6ff5a5932bb4, type: 2}
+  - {fileID: 11400000, guid: 342d1b30e0388e54281a6ff5a5932bb4, type: 2}
