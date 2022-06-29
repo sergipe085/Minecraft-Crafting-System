@@ -19,6 +19,9 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         if (currentItem != null) {
             image.sprite = currentItem.icon;
         }
+        else {
+            image.enabled = false;
+        }
     }
 
     public void AddItem(Item newItem) {
@@ -26,11 +29,13 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
         currentItem = newItem;
         image.sprite = currentItem.icon;
+        image.enabled = true;
     }
 
     public void RemoveItem() {
         currentItem = null;
         image.sprite = null;
+        image.enabled = false;
     }
 
     public void OnPointerClick(PointerEventData eventData) {
