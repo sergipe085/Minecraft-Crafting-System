@@ -14,6 +14,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     public event Action<ItemSlot> OnLeftClickEvent;
     public event Action<ItemSlot> OnRightClickEvent;
+    public event Action OnAddItemEvent;
+    public event Action OnRemoveItemEvent;
+
+    public int stack = 0;
 
     private void Start() {
         if (currentItem != null) {
@@ -24,18 +28,31 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    public void AddItem(Item newItem) {
-        if (newItem == null) return;
+    public bool AddItem(Item newItem) {
+        if (newItem == null) return false;
+
+        if (currentItem == newItem) {
+            stack++;
+            return true;
+        }
 
         currentItem = newItem;
         image.sprite = currentItem.icon;
         image.enabled = true;
+        OnAddItemEvent?.Invoke();
+        stack++;
+        return true;
     }
 
     public void RemoveItem() {
-        currentItem = null;
-        image.sprite = null;
-        image.enabled = false;
+        stack--;
+
+        if (stack <= 0) {
+            currentItem = null;
+            image.sprite = null;
+            image.enabled = false;
+            OnRemoveItemEvent?.Invoke();
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData) {

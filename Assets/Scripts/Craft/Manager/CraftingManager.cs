@@ -18,6 +18,8 @@ public class CraftingManager : MonoBehaviour
         foreach(ItemSlot slot in itemSlots) {
             slot.OnLeftClickEvent += OnSlotLeftClicked;
             slot.OnRightClickEvent += OnSlotRightClicked;
+            slot.OnAddItemEvent += UpdateCraftedItem;
+            slot.OnRemoveItemEvent += UpdateCraftedItem;
         }
     }
 
@@ -40,7 +42,6 @@ public class CraftingManager : MonoBehaviour
         }
         else {
             itemCrafted.AddItem(recipe.outputItem);
-            Debug.Log(recipe.outputItem);
         }
     }
 
