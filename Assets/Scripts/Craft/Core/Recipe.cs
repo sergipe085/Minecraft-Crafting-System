@@ -11,6 +11,9 @@ public class Recipe : ScriptableObject
     public List<Item> itemSlots = new();
 
     public void GenerateHash() {
+        hash.notNullCounter = 0;
+        hash.hashString = "";
+
         foreach (Item item in itemSlots) {
             if (item == null) {
                 hash.hashString += "0";
