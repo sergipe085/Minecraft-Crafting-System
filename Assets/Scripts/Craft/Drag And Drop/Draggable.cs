@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class Draggable : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDra
 
     private Image bufferDraggingImage = null;
 
+    public event Action OnBeginDragEvent;
+
     private void Awake() {
         myItemSlot = GetComponent<ItemSlot>();
     }
@@ -23,6 +26,7 @@ public class Draggable : MonoBehaviour, IDragHandler, IEndDragHandler, IBeginDra
             bufferDraggingImage.sprite = myItemSlot.image.sprite;
             bufferDraggingImage.transform.localScale = myItemSlot.image.transform.localScale;
             myItemSlot.RemoveItem();
+            OnBeginDragEvent?.Invoke();
         }
     }
 

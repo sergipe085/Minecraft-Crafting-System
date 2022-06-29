@@ -21,6 +21,8 @@ public class CraftingManager : MonoBehaviour
             slot.OnAddItemEvent += UpdateCraftedItem;
             slot.OnRemoveItemEvent += UpdateCraftedItem;
         }
+
+        itemCrafted.GetComponent<Draggable>().OnBeginDragEvent += Clear;
     }
 
     private void OnSlotLeftClicked(ItemSlot slot) {
@@ -51,8 +53,13 @@ public class CraftingManager : MonoBehaviour
                 return recipe;
             }
         }
-
         return null;
+    }
+
+    public void Clear() {
+        foreach (ItemSlot slot in itemSlots) {
+            slot.Clear();
+        }
     }
 
     public void GenerateHash() {

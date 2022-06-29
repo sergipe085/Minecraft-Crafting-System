@@ -55,6 +55,16 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public void Clear() {
+        stack--;
+
+        if (stack <= 0) {
+            currentItem = null;
+            image.sprite = null;
+            image.enabled = false;
+        }
+    }
+
     public void OnPointerClick(PointerEventData eventData) {
         if (eventData.button == PointerEventData.InputButton.Left) {
             OnLeftClickEvent?.Invoke(this);
